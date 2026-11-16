@@ -5,6 +5,10 @@ module.exports = defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: process.env.TEST_BASE_URL || 'https://qauto.forstudy.space',
+    httpCredentials: {
+      username: 'guest',
+      password: 'welcome2qauto',
+    },
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },

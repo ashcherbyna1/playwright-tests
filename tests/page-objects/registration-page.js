@@ -34,6 +34,22 @@ class RegistrationPage {
   registerButton() {
     return this.page.getByRole('button', { name: 'Register', exact: true });
   }
+
+  errorMessage(message) {
+    return this.page.getByText(message, { exact: true });
+  }
+
+  modal() {
+    return this.page.locator('.modal');
+  }
+
+  async fillForm({ name, lastName, email, password, repeatPassword }) {
+    await this.nameInput().fill(name);
+    await this.lastNameInput().fill(lastName);
+    await this.emailInput().fill(email);
+    await this.passwordInput().fill(password);
+    await this.repeatPasswordInput().fill(repeatPassword);
+  }
 }
 
 module.exports = RegistrationPage;
